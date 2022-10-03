@@ -34,30 +34,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvUsername"
+        android:textColor="@color/grey"
+        android:id="@+id/tvUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:fontFamily="@font/poppins"
-        tools:text="JakeWharston"
-        android:textSize="11sp"
-        android:textColor="@color/grey"
-        app:layout_constraintStart_toStartOf="@+id/tvName"
-        app:layout_constraintTop_toBottomOf="@+id/tvName" />
-
-    <TextView
-        android:id="@+id/tvCompany"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/poppins"
-        tools:text="Google,Inc."
-        android:textSize="11sp"
-        android:textColor="@color/grey"
+        android:layout_marginStart="24dp"
+        android:gravity="center"
         android:drawablePadding="5dp"
-        android:gravity="bottom"
-        app:layout_constraintStart_toStartOf="@+id/tvUsername"
-        app:layout_constraintTop_toBottomOf="@+id/tvUsername"
-        app:drawableLeftCompat="@drawable/ic_home_work" />
+        android:drawableLeft="@drawable/ic_baseline_brightness_1_24"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:layout_constraintStart_toEndOf="@id/imageView"
+        tools:text="User"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

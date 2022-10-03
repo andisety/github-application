@@ -7,7 +7,6 @@
     android:background="@color/white"
     tools:context=".ui.detail.DetaiActivity">
 
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivProfile"
         android:layout_width="80dp"
@@ -36,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:text="Repository"
+        android:text="@string/repository"
         android:textColor="@color/black"
         android:layout_marginStart="24dp"
         app:layout_constraintStart_toEndOf="@+id/ivProfile"
@@ -60,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="24dp"
-        android:text="Followers"
+        android:text="@string/followers"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvFollowers" />
@@ -82,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:text="Following"
+        android:text="@string/following"
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/textView8"
         app:layout_constraintStart_toEndOf="@+id/textView4"
@@ -98,6 +97,15 @@
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivProfile" />
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        android:textColor="@color/grey"
+        tools:text="username"/>
 
     <TextView
         android:id="@+id/tvCompany"
@@ -106,11 +114,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         tools:text="Google,Inc."
-        android:drawableLeft="@drawable/ic_home_work"
+        tools:drawableLeft="@drawable/ic_home_work"
         android:drawablePadding="10dp"
-        android:textColor="@color/black"
+        android:textColor="@color/grey"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
 
     <TextView
         android:id="@+id/tvLocation"
@@ -119,11 +127,49 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         tools:text="London"
-        android:drawableLeft="@drawable/ic_location"
+        tools:drawableLeft="@drawable/ic_location"
         android:drawablePadding="10dp"
-        android:textColor="@color/black"
+        android:textColor="@color/grey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCompany" />
+
+    <LinearLayout
+        android:background="#F3F3F3"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/tvLocation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tbLayout"
+            app:tabIndicatorColor="@color/black"
+            app:tabTextColor="@color/black"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvLocation"
+        tools:visibility="visible"
+        android:visibility="gone"
+        />
+
+        
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
